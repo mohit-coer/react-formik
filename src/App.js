@@ -1,8 +1,27 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { fetchUsers } from "./Redux";
+import React, { Component, useEffect } from "react";
+import { connect } from "react-redux";
+import Forms from "./forms";
 
-function App() {
-  return <h1>Heelo world</h1>;
+function App(props) {
+  return (
+    <>
+      <Forms />
+    </>
+  );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    userData: state.employee.users,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
