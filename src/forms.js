@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { useFormik } from "formik";
+import SEO from "./seo";
 const Forms = () => {
   const formik = useFormik({
     initialValues: {
@@ -19,6 +20,10 @@ const Forms = () => {
   });
   return (
     <>
+      <SEO
+        siteTitle={"Forms Page"}
+        siteDescription={"This is a Forms Page and Forms Page is form Page"}
+      />
       <form className="container" onSubmit={formik.handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username</label>

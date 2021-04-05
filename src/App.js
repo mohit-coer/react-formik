@@ -19,12 +19,8 @@ function App(props) {
         </ul>
       </nav>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/forms">
-          <Forms />
-        </Route>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/forms" component={Forms}></Route>
       </Switch>
     </>
   );
